@@ -20,18 +20,26 @@ function preload() {
 
     game.load.image('star', 'assets/star.png');
     game.load.image('wave', 'assets/wave.png');
+		game.load.tilemap('map1', 'assets/map1.json', null, Phaser.Tilemap.TILED_JSON);
+
 
 }
 
 var player;
 var platforms;
 var cursors;
+var map;
 
 var stars;
 var score = 0;
 var scoreText;
 
 function create() {
+
+	  map = game.add.tilemap('map1');
+
+		layer = map.createLayer('');
+		layer.resizeWorld();
 
     //  We're going to be using physics, so enable the Arcade Physics system
     game.physics.startSystem(Phaser.Physics.ARCADE);
