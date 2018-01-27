@@ -14,37 +14,37 @@
     {
      "2":
         {
-         "image":"assets\/asteroids\/cropped\/large\/a30003.png",
+         "image":"asteroids\/cropped\/large\/a30003.png",
          "imageheight":137,
          "imagewidth":149
         },
      "3":
         {
-         "image":"assets\/asteroids\/cropped\/large\/a10009.png",
+         "image":"asteroids\/cropped\/large\/a10009.png",
          "imageheight":139,
          "imagewidth":159
         },
      "4":
         {
-         "image":"assets\/asteroids\/cropped\/large\/b10007.png",
+         "image":"asteroids\/cropped\/large\/b10007.png",
          "imageheight":143,
          "imagewidth":144
         },
      "5":
         {
-         "image":"assets\/asteroids\/cropped\/medium\/a10003.png",
+         "image":"asteroids\/cropped\/medium\/a10003.png",
          "imageheight":52,
          "imagewidth":58
         },
      "6":
         {
-         "image":"assets\/asteroids\/cropped\/medium\/a30003.png",
+         "image":"asteroids\/cropped\/medium\/a30003.png",
          "imageheight":52,
          "imagewidth":58
         },
      "7":
         {
-         "image":"assets\/asteroids\/cropped\/medium\/a40003.png",
+         "image":"asteroids\/cropped\/medium\/a40003.png",
          "imageheight":52,
          "imagewidth":58
         }
