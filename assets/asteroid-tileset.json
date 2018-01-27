@@ -2,7 +2,7 @@
 
 {
 	"filename": "large/a10009.png",
-	"frame": {"x":1,"y":194,"w":159,"h":139},
+	"frame": {"x":0,"y":332,"w":159,"h":139},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":159,"h":139},
@@ -10,7 +10,7 @@
 },
 {
 	"filename": "large/a30003.png",
-	"frame": {"x":1,"y":55,"w":149,"h":137},
+	"frame": {"x":0,"y":195,"w":149,"h":137},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":149,"h":137},
@@ -18,7 +18,7 @@
 },
 {
 	"filename": "large/b10007.png",
-	"frame": {"x":1,"y":335,"w":144,"h":143},
+	"frame": {"x":0,"y":52,"w":144,"h":143},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":144,"h":143},
@@ -26,7 +26,7 @@
 },
 {
 	"filename": "medium/a10003.png",
-	"frame": {"x":1,"y":1,"w":58,"h":52},
+	"frame": {"x":58,"y":0,"w":58,"h":52},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":58,"h":52},
@@ -34,7 +34,7 @@
 },
 {
 	"filename": "medium/a30003.png",
-	"frame": {"x":61,"y":1,"w":58,"h":52},
+	"frame": {"x":0,"y":0,"w":58,"h":52},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":58,"h":52},
@@ -42,7 +42,7 @@
 },
 {
 	"filename": "medium/a40003.png",
-	"frame": {"x":121,"y":1,"w":58,"h":52},
+	"frame": {"x":116,"y":0,"w":58,"h":52},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":58,"h":52},
@@ -53,8 +53,8 @@
 	"version": "1.0",
 	"image": "asteroid-tileset.png",
 	"format": "RGBA8888",
-	"size": {"w":180,"h":479},
+	"size": {"w":174,"h":471},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:e60bb8bb5cbbeedb8c6067e88d4f500c:9d430c6b174ebaf51d8d44a00c85250d:931dddb02b31f6b632aa6e27033b178d$"
+	"smartupdate": "$TexturePacker:SmartUpdate:a0da2178b223ee5c28cbf1ee9b9ba803:9d430c6b174ebaf51d8d44a00c85250d:931dddb02b31f6b632aa6e27033b178d$"
 }
 }
