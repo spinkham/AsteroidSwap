@@ -1,0 +1,12 @@
+{ "columns":5,
+ "image":"asteroid-tileset.png",
+ "imageheight":479,
+ "imagewidth":180,
+ "margin":0,
+ "name":"asteroids_packed1",
+ "spacing":0,
+ "tilecount":75,
+ "tileheight":30,
+ "tilewidth":32,
+ "type":"tileset"
+}
