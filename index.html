@@ -52,12 +52,14 @@ function create() {
     asteroids.enableBody = true;
 
     // The player and its settings
-    player = game.add.sprite(400,300,'wave')
+    player = game.add.sprite(200,300,'wave')
 
     //  We need to enable physics on the player
     game.physics.arcade.enable(player);
 
     player.body.collideWorldBounds = true;
+
+		game.camera.follow(player);
 
     //  Finally some stars to collect
     stars = game.add.group();
