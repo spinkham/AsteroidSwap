@@ -1,0 +1,12 @@
+{ "columns":10,
+ "image":"asteroids\/asteroids-32x30.png",
+ "imageheight":320,
+ "imagewidth":320,
+ "margin":0,
+ "name":"asteroids-32x30",
+ "spacing":0,
+ "tilecount":100,
+ "tileheight":30,
+ "tilewidth":32,
+ "type":"tileset"
+}
