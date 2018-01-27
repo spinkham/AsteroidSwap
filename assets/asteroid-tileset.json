@@ -1,0 +1,60 @@
+{"frames": [
+
+{
+	"filename": "large/a10009.png",
+	"frame": {"x":1,"y":194,"w":159,"h":139},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":159,"h":139},
+	"sourceSize": {"w":159,"h":139}
+},
+{
+	"filename": "large/a30003.png",
+	"frame": {"x":1,"y":55,"w":149,"h":137},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":149,"h":137},
+	"sourceSize": {"w":149,"h":137}
+},
+{
+	"filename": "large/b10007.png",
+	"frame": {"x":1,"y":335,"w":144,"h":143},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":144,"h":143},
+	"sourceSize": {"w":144,"h":143}
+},
+{
+	"filename": "medium/a10003.png",
+	"frame": {"x":1,"y":1,"w":58,"h":52},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":58,"h":52},
+	"sourceSize": {"w":58,"h":52}
+},
+{
+	"filename": "medium/a30003.png",
+	"frame": {"x":61,"y":1,"w":58,"h":52},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":58,"h":52},
+	"sourceSize": {"w":58,"h":52}
+},
+{
+	"filename": "medium/a40003.png",
+	"frame": {"x":121,"y":1,"w":58,"h":52},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":58,"h":52},
+	"sourceSize": {"w":58,"h":52}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "asteroid-tileset.png",
+	"format": "RGBA8888",
+	"size": {"w":180,"h":479},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:e60bb8bb5cbbeedb8c6067e88d4f500c:9d430c6b174ebaf51d8d44a00c85250d:931dddb02b31f6b632aa6e27033b178d$"
+}
+}
