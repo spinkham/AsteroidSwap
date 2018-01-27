@@ -20,8 +20,8 @@ function preload() {
 
     game.load.image('star', 'assets/star.png');
     game.load.image('wave', 'assets/wave.png');
-		game.load.tilemap('map1', 'assets/map1.json', null, Phaser.Tilemap.TILED_JSON);
-
+		game.load.tilemap('biomes', 'assets/Biomes.json', null, Phaser.Tilemap.TILED_JSON);
+		game.load.image('asteroids-32x30','assets/asteroids/asteroids-32x30.png')
 
 }
 
@@ -36,9 +36,10 @@ var scoreText;
 
 function create() {
 
-	  map = game.add.tilemap('map1');
+	  map = game.add.tilemap('biomes');
+		map.addTilesetImage('asteroids-32x30');
 
-		layer = map.createLayer('');
+		layer = map.createLayer('Biome1');
 		layer.resizeWorld();
 
     //  We're going to be using physics, so enable the Arcade Physics system
