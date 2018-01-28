@@ -26,16 +26,18 @@
       game.load.image('star', 'assets/star.png');
       game.load.image('wave', 'assets/wave.png');
       game.load.tilemap('biomes', 'assets/Biomes.json', null, Phaser.Tilemap.TILED_JSON);
-      game.load.image('asteroids-32x30', 'assets/asteroids/asteroids-32x30.png')
-
+      game.load.image('asteroids-32x30', 'assets/asteroids/asteroids-32x30.png');
+      game.load.image('start', '/assets/start.png')
     }
 
     var player;
     var spacebar;
     var map;
+    var levelNumber=0;
     var direction = 'up';
 
     var stars;
+    var start;
     var score = 0;
     var scoreText;
 
@@ -46,12 +48,12 @@
       map = game.add.tilemap('biomes');
       map.addTilesetImage('asteroids-32x30');
 
-      layer = map.createLayer('Biome1');
+      layer = map.createLayer('Earthstart');
       layer.resizeWorld();
 
       map.setCollisionBetween(1,102, true, layer);
 
-      player = game.add.sprite(200, 300, 'wave');
+      player = game.add.sprite(300, 300, 'wave');
       player.anchor.setTo(0.5, 0.5);
       game.physics.arcade.enable(player);
       player.body.collideWorldBounds = true;
@@ -59,6 +61,10 @@
 
       stars = game.add.group();
       stars.enableBody = true;
+
+      start = game.add.sprite(10,320,'start');
+      start.anchor.setTo(0, 0.5);
+
 
       //for (var i = 0; i < 12; i++) {
       //  var star = stars.create(i * 70, 450, 'star');
@@ -79,7 +85,11 @@
 
     function update() {
       game.physics.arcade.overlap(player, stars, collectStar, null, this);
-      game.physics.arcade.collide(player, layer, test1, null, this);
+      game.physics.arcade.collide(player, layer, collideAsteroid, null, this);
+
+      if (player.x > 1580){
+        nextMap();
+      }
 
       stars.forEachAlive(function(star) {
         if (star.y <= 450) {
@@ -98,8 +108,9 @@
       scoreText.text = 'Score: ' + score;
     }
 
-    function test1(player, star) {
+    function collideAsteroid(player, star) {
       scoreText.text = 'Collide';
+
     }
 
     function reverseDirection(){
@@ -118,6 +129,32 @@
         player.body.velocity.y = -75;
         player.angle = -45;
       }
+    }
+
+    function nextMap(){
+      levelNumber += 1;
+      if (levelNumber == 1){
+        start.kill();
+      }
+      if (levelNumber > 9){
+        winningScreen();
+        game.paused=true;
+      } else if (levelNumber <= 9){
+        layer.destroy();
+        if (levelNumber == 9){
+          layer = map.createLayer('Planetend');
+        } else {
+          layer = map.createLayer('Biome'+levelNumber);
+        }
+        layer.resizeWorld();
+        map.setCollisionBetween(1,102, true, layer);
+        player.x=10;
+        player.y=300;
+      }
+    }
+
+    function winningScreen(){
+      scoreText.text = 'You won!';
     }
   </script>
 
