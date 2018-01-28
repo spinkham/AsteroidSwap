@@ -27,17 +27,19 @@
       game.load.image('wave', 'assets/wave.png');
       game.load.tilemap('biomes', 'assets/Biomes.json', null, Phaser.Tilemap.TILED_JSON);
       game.load.image('asteroids-32x30', 'assets/asteroids/asteroids-32x30.png');
-      game.load.image('start', '/assets/start.png')
+      game.load.image('start', 'assets/start.png');
+      game.load.image('planet', 'assets/Planet.png');
     }
 
     var player;
     var spacebar;
     var map;
-    var levelNumber=0;
+    var levelNumber=8;
     var direction = 'up';
 
     var stars;
     var start;
+    var planet;
     var score = 0;
     var scoreText;
 
@@ -74,7 +76,7 @@
       spacebar = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
       spacebar.onDown.add(reverseDirection,this);
 
-      scoreText = game.add.text(16, 16, 'Score: 0', {
+      scoreText = game.add.text(16, 16, '', {
         fontSize: '32px',
         fill: '#888'
       });
@@ -86,6 +88,7 @@
     function update() {
       game.physics.arcade.overlap(player, stars, collectStar, null, this);
       game.physics.arcade.collide(player, layer, collideAsteroid, null, this);
+      game.physics.arcade.overlap(player, planet, winningScreen, null, this);
 
       if (player.x > 1580){
         nextMap();
@@ -101,7 +104,6 @@
       });
     }
 
-
     function collectStar(player, star) {
       star.kill();
       score += 10;
@@ -109,8 +111,12 @@
     }
 
     function collideAsteroid(player, star) {
-      scoreText.text = 'Collide';
-
+      fail = game.add.text(20, 200, 'Transmission Failed', {
+        fontSize: '80px',
+        fill: '#FF0'
+      });
+      fail.fixedToCamera = true;
+      player.kill();
     }
 
     function reverseDirection(){
@@ -143,18 +149,25 @@
         layer.destroy();
         if (levelNumber == 9){
           layer = map.createLayer('Planetend');
+          planet = game.add.sprite(1450,300,'planet');
+          planet.anchor.setTo(0, 0.5);
         } else {
           layer = map.createLayer('Biome'+levelNumber);
         }
         layer.resizeWorld();
         map.setCollisionBetween(1,102, true, layer);
-        player.x=10;
+        player.x=1000;
         player.y=300;
       }
     }
 
     function winningScreen(){
-      scoreText.text = 'You won!';
+      winning = game.add.text(20, 200, 'Data Transmitted!', {
+        fontSize: '90px',
+        fill: '#FF0'
+      });
+      winning.fixedToCamera = true;
+      game.paused=true;
     }
   </script>
 
