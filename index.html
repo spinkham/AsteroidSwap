@@ -15,7 +15,7 @@
 <body>
 
   <script type="text/javascript">
-    var game = new Phaser.Game(800, 600, Phaser.AUTO, '', {
+    var game = new Phaser.Game(800, 600, Phaser.AUTO, 'Asteroid Swap', {
       preload: preload,
       create: create,
       update: update
@@ -34,7 +34,7 @@
     var player;
     var spacebar;
     var map;
-    var levelNumber=8;
+    var levelNumber=0;
     var direction = 'up';
 
     var stars;
@@ -44,7 +44,6 @@
     var scoreText;
 
     function create() {
-
       game.physics.startSystem(Phaser.Physics.ARCADE);
 
       map = game.add.tilemap('biomes');
@@ -75,6 +74,7 @@
 
       spacebar = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
       spacebar.onDown.add(reverseDirection,this);
+      game.input.onTap.add(reverseDirection, this);
 
       scoreText = game.add.text(16, 16, '', {
         fontSize: '32px',
@@ -93,6 +93,9 @@
       if (player.x > 1580){
         nextMap();
       }
+      if (player.y < 15 || player.y > 585){
+        collideAsteroid();
+      }
 
       stars.forEachAlive(function(star) {
         if (star.y <= 450) {
@@ -110,7 +113,7 @@
       scoreText.text = 'Score: ' + score;
     }
 
-    function collideAsteroid(player, star) {
+    function collideAsteroid() {
       fail = game.add.text(20, 200, 'Transmission Failed', {
         fontSize: '80px',
         fill: '#FF0'
@@ -156,7 +159,7 @@
         }
         layer.resizeWorld();
         map.setCollisionBetween(1,102, true, layer);
-        player.x=1000;
+        player.x=10;
         player.y=300;
       }
     }
